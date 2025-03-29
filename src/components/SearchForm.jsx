@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import IsObjectEmpty from "../utils/IsObjectEmpty";
 
 export default function SearchForm() {
+    const params = useParams();
     const [inputValue, setInputValue] = useState("");
     const navigate = useNavigate();
     function handleSubmit(e) {
@@ -10,8 +12,15 @@ export default function SearchForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <strong>Gogle</strong>
+        <form
+            onSubmit={handleSubmit}
+            className={
+                IsObjectEmpty(params) ? "big-search-form" : "small-search-form"
+            }
+        >
+            <strong>
+                <Link to="/">Gogle</Link>
+            </strong>
             <input
                 required
                 type="search"
