@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 vi.mock("react-router-dom", () => ({
     ...vi.importActual("react-router-dom"),
     useNavigate: vi.fn(),
+    useParams: vi.fn(),
+    Link: vi.fn(),
 }));
 
 describe("SearchForm", () => {
