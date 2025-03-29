@@ -37,10 +37,10 @@ button {
     cursor: pointer;
 }
 a:link {
-    color: rgb(123, 123, 207);
+    color: rgb(89, 89, 170);
 }
 a:visited {
-    color: rgb(92, 92, 179);
+    color: rgb(37, 37, 112);
 }
 a:hover {
     filter: brightness(90%);
