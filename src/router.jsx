@@ -10,7 +10,7 @@ export const route = [
                 element: <div>nothing</div>,
             },
             {
-                path: ":request/:start",
+                path: ":request/:start?",
                 element: <SearchBlock />,
                 loader: requestLoader,
             },
