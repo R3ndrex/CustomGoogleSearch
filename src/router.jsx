@@ -7,7 +7,6 @@ export const route = [
         children: [
             {
                 index: true,
-                element: <div>nothing</div>,
             },
             {
                 path: ":request/:start?",
