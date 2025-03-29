@@ -8,24 +8,24 @@ export default function Pagination({
     const { request } = useParams();
     const navigate = useNavigate();
     function handlePreviousPageClick() {
-        if (previousPageStartIndex) {
-            navigate(`/${request}/${previousPageStartIndex}`);
-            window.scrollTo(0, 0);
-        }
+        navigate(`/${request}/${previousPageStartIndex}`);
+        window.scrollTo(0, 0);
     }
 
     function handleNextPageClick() {
-        if (nextPageStartIndex) {
-            navigate(`/${request}/${nextPageStartIndex}`);
-            window.scrollTo(0, 0);
-        }
+        navigate(`/${request}/${nextPageStartIndex}`);
+        window.scrollTo(0, 0);
     }
 
     return (
-        <div>
-            <button onClick={handlePreviousPageClick}>Previous page</button>
+        <div className="pagination">
+            {previousPageStartIndex && (
+                <button onClick={handlePreviousPageClick}>Previous page</button>
+            )}
             <span data-testid="span-page">{page}</span>
-            <button onClick={handleNextPageClick}>Next page</button>
+            {nextPageStartIndex && (
+                <button onClick={handleNextPageClick}>Next page</button>
+            )}
         </div>
     );
 }
