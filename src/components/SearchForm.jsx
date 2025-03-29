@@ -6,7 +6,7 @@ export default function SearchForm() {
     const navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
-        navigate(`${inputValue}/0`);
+        navigate(`${inputValue}`);
     }
 
     return (
