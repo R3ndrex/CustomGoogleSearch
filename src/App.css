@@ -1,4 +1,5 @@
 #root {
+    position: relative;
     max-width: 1280px;
     margin: 0 auto;
     text-align: center;
@@ -17,6 +18,20 @@
         margin-top: 0;
     }
 }
+.big-search-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.small-search-form {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: white;
+}
+
 .item-block {
     display: flex;
     flex-direction: column;
@@ -24,10 +39,16 @@
 }
 .display-link {
     margin-bottom: 1rem;
+
     color: rgb(201, 200, 200);
 }
 form {
+    padding: 1rem 0 0 0;
+    width: min(500px, 90%);
     display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
     gap: 1rem;
     justify-content: center;
     align-items: center;
