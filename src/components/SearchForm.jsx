@@ -13,9 +13,11 @@ export default function SearchForm() {
         <form onSubmit={handleSubmit}>
             <strong>Gogle</strong>
             <input
+                required
                 type="search"
                 id="search-input"
                 name="search-input"
+                placeholder="Enter search value"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.currentTarget.value)}
             />
