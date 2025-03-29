@@ -1,0 +1,35 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+.search-item {
+    position: relative;
+    text-align: start;
+    width: min(500px, 90%);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    h2 {
+        margin-bottom: 0;
+    }
+    & p {
+        margin-top: 0;
+    }
+}
+.item-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.display-link {
+    margin-bottom: 1rem;
+    color: rgb(201, 200, 200);
+}
+form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
