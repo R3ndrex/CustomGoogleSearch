@@ -29,6 +29,6 @@ describe("SearchForm", () => {
         await user.type(input, "hello");
         await user.click(screen.getByText(/Search/i));
 
-        expect(navigate).toBeCalledWith("hello/0");
+        expect(navigate).toBeCalledWith("hello");
     });
 });
