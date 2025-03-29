@@ -17,6 +17,7 @@ export async function loader({ params }) {
 
 export default function SearchBlock() {
     const searches = useLoaderData();
+    const page = (searches.queries.request[0].startIndex - 1) / 10;
     return (
         <>
             <section className="item-block">
@@ -31,7 +32,7 @@ export default function SearchBlock() {
                         searches.queries.nextPage &&
                         searches.queries.nextPage[0].startIndex
                     }
-                    page={searches.queries.request[0].startIndex}
+                    page={page}
                     previousPageStartIndex={
                         searches.queries.previousPage &&
                         searches.queries.previousPage[0].startIndex
