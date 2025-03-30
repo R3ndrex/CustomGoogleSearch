@@ -1,19 +1,27 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import SearchForm from "./SearchForm";
 
 export default function SmallSearchForm() {
-    const [inputValue, setInputValue] = useState("");
-    const [safeSearch, setSafeSearch] = useState(false);
+    const { request, start } = useParams();
 
+    const [safeValue, setSafeValue] = useState();
+    const [inputValue, setInputValue] = useState("");
     const navigate = useNavigate();
+
     function handleSubmit(e) {
         e.preventDefault();
-        if (safeSearch) {
-            navigate(`${inputValue}/1/safe`);
+        if (safeValue) {
+            navigate(`/${inputValue}/1/safe`);
         } else {
-            navigate(`${inputValue}/1`);
+            navigate(`/${inputValue}/1`);
         }
+    }
+    function handleCheckbox(e) {
+        setSafeValue(e.currentTarget.checked);
+        navigate(
+            `/${request}/${start}/${e.currentTarget.checked ? "safe" : ""}`
+        );
     }
 
     return (
@@ -30,8 +38,8 @@ export default function SmallSearchForm() {
             <input
                 type="checkbox"
                 name="safe-search"
-                checked={safeSearch}
-                onChange={(e) => setSafeSearch(e.currentTarget.checked)}
+                checked={safeValue}
+                onChange={handleCheckbox}
                 id="safe-search"
             />
         </SearchForm>
