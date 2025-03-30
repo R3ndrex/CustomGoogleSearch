@@ -11,9 +11,9 @@ export default function SearchForm() {
     function handleSubmit(e) {
         e.preventDefault();
         if (safeSearch) {
-            navigate(`${inputValue}/0/safe`);
+            navigate(`${inputValue}/1/safe`);
         } else {
-            navigate(`${inputValue}/0`);
+            navigate(`${inputValue}/1`);
         }
     }
 
@@ -25,7 +25,9 @@ export default function SearchForm() {
             }
         >
             <strong>
-                <Link to="/">Gogle</Link>
+                <Link to="/">
+                    <h1>Gogle</h1>
+                </Link>
             </strong>
             <input
                 required
