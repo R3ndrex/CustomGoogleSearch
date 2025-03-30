@@ -5,10 +5,16 @@ import IsObjectEmpty from "../utils/IsObjectEmpty";
 export default function SearchForm() {
     const params = useParams();
     const [inputValue, setInputValue] = useState("");
+    const [safeSearch, setSafeSearch] = useState(false);
+
     const navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
-        navigate(`${inputValue}`);
+        if (safeSearch) {
+            navigate(`${inputValue}/0/safe`);
+        } else {
+            navigate(`${inputValue}/0`);
+        }
     }
 
     return (
@@ -31,6 +37,13 @@ export default function SearchForm() {
                 onChange={(e) => setInputValue(e.currentTarget.value)}
             />
             <button type="submit">Search</button>
+            <input
+                type="checkbox"
+                name="safe-search"
+                checked={safeSearch}
+                onChange={(e) => setSafeSearch(e.currentTarget.checked)}
+                id="safe-search"
+            />
         </form>
     );
 }

@@ -9,7 +9,7 @@ export const route = [
                 index: true,
             },
             {
-                path: ":request/:start?",
+                path: "/:request/:start/:safe?",
                 element: <SearchBlock />,
                 loader: requestLoader,
             },
