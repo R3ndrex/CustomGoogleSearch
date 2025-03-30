@@ -15,7 +15,7 @@ describe("SearchForm", () => {
         const user = userEvent.setup();
         render(<SearchForm />);
 
-        const input = screen.getByPlaceholderText(/Enter search value/i);
+        const input = screen.getByPlaceholderText(/search.../i);
         await user.type(input, "hello kitty");
 
         expect(input).toHaveDisplayValue("hello kitty");
@@ -27,9 +27,9 @@ describe("SearchForm", () => {
         useNavigate.mockReturnValue(navigate);
         render(<SearchForm />);
 
-        const input = screen.getByPlaceholderText(/Enter search value/i);
+        const input = screen.getByPlaceholderText(/search.../i);
         await user.type(input, "hello");
-        await user.click(screen.getByText(/Search/i));
+        await user.click(screen.getByText(/Search in Gogle/i));
 
         expect(navigate).toBeCalledWith("hello/1");
     });
