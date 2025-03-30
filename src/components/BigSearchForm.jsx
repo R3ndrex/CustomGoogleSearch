@@ -5,9 +5,9 @@ import SearchForm from "./SearchForm";
 export default function BigSearchForm() {
     const [inputValue, setInputValue] = useState("");
     const navigate = useNavigate();
+
     function handleSubmit(e) {
         e.preventDefault();
-        navigate(`${inputValue}/1/safe`);
         navigate(`${inputValue}/1`);
     }
 
