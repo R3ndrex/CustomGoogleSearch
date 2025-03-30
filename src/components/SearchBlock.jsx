@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Pagination from "./Pagination";
 import SearchItem from "./SearchItem";
+import ChangeTitle from "../utils/ChangeTitle";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const cx = import.meta.env.VITE_CX;
@@ -12,6 +13,9 @@ export async function loader({ params }) {
     );
     const searches = await response.json();
     console.log(searches);
+    if (searches.queries.request) {
+        ChangeTitle(searches.queries.request[0].title);
+    }
     return searches;
 }
 
