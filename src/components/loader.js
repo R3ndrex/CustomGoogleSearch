@@ -8,7 +8,6 @@ export async function loader({ params }) {
         `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${cx}&q=${params.request}&start=${params.start}&safe=${safe}`
     );
     const searches = await response.json();
-    console.log(searches);
     if (searches.queries.request) {
         ChangeTitle(searches.queries.request[0].title);
     }
