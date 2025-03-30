@@ -1,18 +1,14 @@
-import SearchBlock, { loader as requestLoader } from "./components/SearchBlock";
-import App from "./Template";
+import Template, { loader as requestLoader } from "./Template";
+import BigSearchForm from "./components/BigSearchForm";
+
 export const route = [
     {
         path: "",
-        element: <App />,
-        children: [
-            {
-                index: true,
-            },
-            {
-                path: "/:request/:start/:safe?",
-                element: <SearchBlock />,
-                loader: requestLoader,
-            },
-        ],
+        element: <BigSearchForm />,
+    },
+    {
+        path: "/:request/:start/:safe?",
+        element: <Template />,
+        loader: requestLoader,
     },
 ];
