@@ -26,7 +26,7 @@ export default function Pagination({
     }
 
     return (
-        <div className="pagination">
+        <section className="pagination">
             {previousPageStartIndex && (
                 <button onClick={handlePreviousPageClick}>Previous page</button>
             )}
@@ -34,6 +34,6 @@ export default function Pagination({
             {nextPageStartIndex && (
                 <button onClick={handleNextPageClick}>Next page</button>
             )}
-        </div>
+        </section>
     );
 }
