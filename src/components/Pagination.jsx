@@ -5,15 +5,23 @@ export default function Pagination({
     previousPageStartIndex,
     page,
 }) {
-    const { request } = useParams();
+    const { request, safe } = useParams();
     const navigate = useNavigate();
     function handlePreviousPageClick() {
-        navigate(`/${request}/${previousPageStartIndex}`);
+        if (safe) {
+            navigate(`/${request}/${previousPageStartIndex}/safe`);
+        } else {
+            navigate(`/${request}/${previousPageStartIndex}`);
+        }
         window.scrollTo(0, 0);
     }
 
     function handleNextPageClick() {
-        navigate(`/${request}/${nextPageStartIndex}`);
+        if (safe) {
+            navigate(`/${request}/${nextPageStartIndex}/safe`);
+        } else {
+            navigate(`/${request}/${nextPageStartIndex}`);
+        }
         window.scrollTo(0, 0);
     }
 
