@@ -1,4 +1,5 @@
-import Template, { loader as requestLoader } from "./Template";
+import Template from "./Template";
+import { loader as requestLoader } from "./components/loader";
 import BigSearchForm from "./components/BigSearchForm";
 
 export const route = [
