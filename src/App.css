@@ -83,6 +83,19 @@ nav {
     }
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.icon {
+    cursor: pointer;
+    width: 1.5rem;
+}
+
 @media screen and (width<=800px) {
     :root {
         font-size: 0.8rem;

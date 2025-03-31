@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 export default function Pagination({
     nextPageStartIndex,
@@ -28,11 +29,17 @@ export default function Pagination({
     return (
         <section className="pagination">
             {previousPageStartIndex && (
-                <button onClick={handlePreviousPageClick}>Previous page</button>
+                <ChevronLeftIcon
+                    className="icon"
+                    onClick={handlePreviousPageClick}
+                />
             )}
             <span data-testid="span-page">{page}</span>
             {nextPageStartIndex && (
-                <button onClick={handleNextPageClick}>Next page</button>
+                <ChevronRightIcon
+                    className="icon"
+                    onClick={handleNextPageClick}
+                />
             )}
         </section>
     );
