@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SearchForm > renders correctly 1`] = `
+<div>
+  <nav>
+    <form>
+      <input
+        placeholder="search..."
+        type="text"
+      />
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </nav>
+</div>
+`;
