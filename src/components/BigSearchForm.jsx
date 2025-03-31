@@ -12,7 +12,11 @@ export default function BigSearchForm() {
     }
 
     return (
-        <SearchForm handleSubmit={handleSubmit} formClass="big-search-form">
+        <SearchForm
+            handleSubmit={handleSubmit}
+            formClass="big-search-form"
+            navClass="big-nav"
+        >
             <input
                 required
                 type="search"
