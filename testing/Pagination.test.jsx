@@ -24,9 +24,9 @@ describe("Pagination", () => {
             />
         );
 
-        await user.click(screen.getByText(/previous/i));
+        await user.click(screen.getByTestId(/previous/i));
 
-        expect(navigate).toBeCalledWith(`/requestTest/1`);
+        expect(navigate).toBeCalledWith(`/requestTest/1/`);
     });
 
     it("calls navigation to desired page on next page click", async () => {
@@ -42,9 +42,9 @@ describe("Pagination", () => {
             />
         );
 
-        await user.click(screen.getByText(/next/i));
+        await user.click(screen.getByTestId(/next/i));
 
-        expect(navigate).toBeCalledWith(`/requestTest/11`);
+        expect(navigate).toBeCalledWith(`/requestTest/11/`);
     });
 
     it("renders page number correctly", () => {

@@ -20,6 +20,7 @@ export default function Pagination({
         <section className="pagination">
             {previousPageStartIndex && (
                 <ChevronLeftIcon
+                    data-testid="previous"
                     className="icon"
                     onClick={handlePreviousPageClick}
                 />
@@ -27,6 +28,7 @@ export default function Pagination({
             <span data-testid="span-page">{page}</span>
             {nextPageStartIndex && (
                 <ChevronRightIcon
+                    data-testid="next"
                     className="icon"
                     onClick={handleNextPageClick}
                 />
