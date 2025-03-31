@@ -8,12 +8,12 @@ export default function SearchForm({
 }) {
     return (
         <nav className={navClass}>
-            <form onSubmit={handleSubmit} className={formClass}>
+            <Link to="/">
                 <strong>
-                    <Link to="/">
-                        <h1>Gogle</h1>
-                    </Link>
+                    <h1>Gogle</h1>
                 </strong>
+            </Link>
+            <form onSubmit={handleSubmit} className={formClass}>
                 {children}
             </form>
         </nav>
