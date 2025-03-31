@@ -47,6 +47,24 @@ describe("Pagination", () => {
         expect(navigate).toBeCalledWith(`/requestTest/11/`);
     });
 
+    it("calls navigation to desired page on click with safe", async () => {
+        const navigate = vi.fn();
+        useNavigate.mockReturnValue(navigate);
+        useParams.mockReturnValue({ request: "requestTest", safe: "safe" });
+        const user = userEvent.setup();
+        render(
+            <Pagination
+                nextPageStartIndex={11}
+                previousPageStartIndex={1}
+                page={5}
+            />
+        );
+
+        await user.click(screen.getByTestId(/next/i));
+
+        expect(navigate).toBeCalledWith(`/requestTest/11/safe`);
+    });
+
     it("renders page number correctly", () => {
         render(
             <Pagination
