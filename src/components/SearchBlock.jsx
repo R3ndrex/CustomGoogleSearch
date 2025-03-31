@@ -4,7 +4,7 @@ import SearchItem from "./SearchItem";
 export default function SearchBlock({ searches }) {
     useEffect(() => {
         window.scrollTo(0, 0);
-    });
+    }, [searches]);
     return (
         <>
             <section className="item-block">
