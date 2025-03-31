@@ -9,21 +9,11 @@ export default function Pagination({
     const { request, safe } = useParams();
     const navigate = useNavigate();
     function handlePreviousPageClick() {
-        if (safe) {
-            navigate(`/${request}/${previousPageStartIndex}/safe`);
-        } else {
-            navigate(`/${request}/${previousPageStartIndex}`);
-        }
-        window.scrollTo(0, 0);
+        navigate(`/${request}/${previousPageStartIndex}/${safe || ""}`);
     }
 
     function handleNextPageClick() {
-        if (safe) {
-            navigate(`/${request}/${nextPageStartIndex}/safe`);
-        } else {
-            navigate(`/${request}/${nextPageStartIndex}`);
-        }
-        window.scrollTo(0, 0);
+        navigate(`/${request}/${nextPageStartIndex}/${safe || ""}`);
     }
 
     return (
