@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import SearchItem from "./SearchItem";
 
 export default function SearchBlock({ searches }) {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     return (
         <>
             <section className="item-block">
