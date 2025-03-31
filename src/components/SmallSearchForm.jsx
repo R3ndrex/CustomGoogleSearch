@@ -25,7 +25,11 @@ export default function SmallSearchForm() {
     }
 
     return (
-        <SearchForm navClass="small-nav" handleSubmit={handleSubmit}>
+        <SearchForm
+            navClass="small-nav"
+            formClass="small-form"
+            handleSubmit={handleSubmit}
+        >
             <input
                 required
                 type="search"
