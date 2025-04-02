@@ -4,6 +4,11 @@ import SearchForm from "./SearchForm";
 
 export default function SmallSearchForm() {
     const { request, start, safe } = useParams();
+
+    console.log(request);
+    console.log(safe);
+    console.log(start);
+
     const [safeValue, setSafeValue] = useState(safe);
     const [inputValue, setInputValue] = useState(request);
     const navigate = useNavigate();
