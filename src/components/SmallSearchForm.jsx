@@ -35,13 +35,17 @@ export default function SmallSearchForm() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.currentTarget.value)}
             />
-            <input
-                type="checkbox"
-                name="safe-search"
-                checked={safeValue}
-                onChange={handleCheckbox}
-                id="safe-search"
-            />
+
+            <label className="safe-search-label" htmlFor="safe-search">
+                <input
+                    type="checkbox"
+                    className="safe-search-check"
+                    name="safe-search"
+                    checked={safeValue}
+                    onChange={handleCheckbox}
+                    id="safe-search"
+                />
+            </label>
         </SearchForm>
     );
 }
