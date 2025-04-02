@@ -5,13 +5,13 @@ import SearchForm from "./SearchForm";
 export default function SmallSearchForm() {
     const { request, start, safe } = useParams();
 
-    const [safeValue, setSafeValue] = useState(safe);
-    const [inputValue, setInputValue] = useState(request);
+    const [safeValue, setSafeValue] = useState(safe === "safe");
+    const [inputValue, setInputValue] = useState(request || "");
     const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
-        navigate(`/${inputValue}/1/${safeValue ? "safe" : ""}`);
+        navigate(`/${inputValue}/1/${safeValue || ""}`);
     }
     function handleCheckbox(e) {
         setSafeValue(e.currentTarget.checked);
@@ -35,17 +35,20 @@ export default function SmallSearchForm() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.currentTarget.value)}
             />
+            <div>
+                <label htmlFor="safe-search">Safe Mode</label>
 
-            <label className="safe-search-label" htmlFor="safe-search">
-                <input
-                    type="checkbox"
-                    className="safe-search-check"
-                    name="safe-search"
-                    checked={safeValue}
-                    onChange={handleCheckbox}
-                    id="safe-search"
-                />
-            </label>
+                <label className="safe-search-label" htmlFor="safe-search">
+                    <input
+                        type="checkbox"
+                        className="safe-search-check"
+                        name="safe-search"
+                        checked={safeValue}
+                        onChange={handleCheckbox}
+                        id="safe-search"
+                    />
+                </label>
+            </div>
         </SearchForm>
     );
 }
